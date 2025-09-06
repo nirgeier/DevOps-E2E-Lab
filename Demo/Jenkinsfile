@@ -1,0 +1,25 @@
+pipeline {
+  agent any
+  stages {
+    stage('Checkout') {
+      steps {
+        checkout scm
+      }
+    }
+    stage('Install') {
+      steps {
+        sh 'npm install --prefix src'
+      }
+    }
+    stage('Test') {
+      steps {
+        sh 'npm test --prefix src'
+      }
+    }
+    stage('Build Docker') {
+      steps {
+        sh 'docker build -t devops-demo:latest -f docker/Dockerfile src'
+      }
+    }
+  }
+}

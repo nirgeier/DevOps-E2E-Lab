@@ -1,0 +1,7 @@
+services:
+  app:
+    build:
+      context: ../ # Project root, so Docker can access src/
+      dockerfile: docker/Dockerfile
+    ports:
+      - "3000:3000"

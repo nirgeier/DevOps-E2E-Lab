@@ -1,0 +1,7 @@
+replicaCount: 1
+image:
+  repository: devops-demo
+  tag: latest
+service:
+  type: NodePort
+  port: 3000

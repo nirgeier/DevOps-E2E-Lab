@@ -1,0 +1,8 @@
+# Prometheus & Grafana Helm values
+prometheus:
+  prometheusSpec:
+    serviceMonitorSelectorNilUsesHelmValues: false
+grafana:
+  adminPassword: "admin"
+  service:
+    type: NodePort

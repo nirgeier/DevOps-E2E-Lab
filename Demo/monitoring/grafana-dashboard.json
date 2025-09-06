@@ -1,0 +1,17 @@
+{
+  "dashboard": {
+    "title": "DevOps Demo Dashboard",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "Error Rate",
+        "targets": [
+          {
+            "expr": "sum(rate(http_requests_total{status=\"500\"}[5m]))",
+            "legendFormat": "Errors"
+          }
+        ]
+      }
+    ]
+  }
+}
